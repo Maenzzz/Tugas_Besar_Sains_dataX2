@@ -207,14 +207,8 @@ products_data['Cluster'] = kmeans.labels_
 # Display the clustered products
 st.subheader('Clustered Products:')
 st.write(products_data[['product_id', 'product_category_name', 'Cluster']].head(50  ))
-print("1. Load Data: Data produk dimuat menggunakan fungsi load_data.")
-print("   Di sini menggunakan SimpleImputer dari sklearn.impute untuk mengisi nilai-nilai yang hilang dalam data.")
-
-print("2. Select Relevant Features: Memilih fitur-fitur yang relevan untuk dilakukan clustering, seperti panjang, lebar, dan tinggi produk.\n")
-
-print("3. Data Preprocessing: Fitur-fitur yang telah dipilih kemudian diimputasi dengan mengisi nilai-nilai yang hilang menggunakan mean dari masing-masing fitur. Setelah itu, fitur-fitur tersebut diskalakan menggunakan StandardScaler dari sklearn.preprocessing.\n")
-
-print("4. KMeans Clustering: Menerapkan algoritma KMeans untuk melakukan clustering pada data yang telah dipreprocessing, dengan menggunakan jumlah cluster sebanyak 3 dan random_state=42 untuk hasil yang konsisten.")
-
-print("5. Menambahkan Label Cluster ke Data Asli: Hasil clustering (label cluster) kemudian ditambahkan ke data produk asli.")
-
+st.write("1. Load Data: Data produk dimuat menggunakan fungsi load_data.")
+st.write("2. Select Relevant Features: Memilih fitur-fitur yang relevan untuk dilakukan clustering, seperti panjang, lebar, dan tinggi produk.")
+st.write("3. Data Preprocessing: Fitur-fitur yang telah dipilih kemudian diimputasi dengan mengisi nilai-nilai yang hilang menggunakan mean dari masing-masing fitur. Setelah itu, fitur-fitur tersebut diskalakan menggunakan StandardScaler dari sklearn.preprocessing.")
+st.write("4. KMeans Clustering: Menerapkan algoritma KMeans untuk melakukan clustering pada data yang telah dipreprocessing, dengan menggunakan jumlah cluster sebanyak 3 dan random_state=42 untuk hasil yang konsisten.")
+st.write("5. Menambahkan Label Cluster ke Data Asli: Hasil clustering (label cluster) kemudian ditambahkan ke data produk asli.")
