@@ -4,6 +4,5 @@ pandas
 streamlit_option_menu
 requests
 matplotlib
-sklearn
 scikit-learn
 
