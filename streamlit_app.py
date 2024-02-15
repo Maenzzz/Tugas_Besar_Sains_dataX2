@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 # Function to load data from URL
 def load_data(url):
     try:
@@ -135,3 +136,74 @@ elif analysis_choice == "Product Analysis":
     products_data = load_data("https://raw.githubusercontent.com/Maenzzz/Tugas_Besar_Sains_data/main/products_dataset.csv")
     if products_data is not None:
         product_analysis(products_data)
+
+
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+def product_analysis(products_data):
+    st.header('Product Analysis')
+
+    # Drop rows with missing values for simplicity
+    products_data.dropna(inplace=True)
+
+    # Select relevant features for clustering
+    features = products_data[['product_length_cm', 'product_height_cm', 'product_width_cm']]
+
+    # Standardize the features
+    scaler = StandardScaler()
+    scaled_features = scaler.fit_transform(features)
+
+    # Apply KMeans clustering
+    kmeans = KMeans(n_clusters=3, random_state=42)
+    products_data['cluster'] = kmeans.fit_predict(scaled_features)
+
+    # Display cluster distribution
+    st.subheader('Cluster Distribution')
+    st.write(products_data['cluster'].value_counts())
+
+    # Optional: Visualize cluster centroids
+    centroids = scaler.inverse_transform(kmeans.cluster_centers_)
+    centroids_df = pd.DataFrame(centroids, columns=features.columns)
+    st.subheader('Cluster Centroids')
+    st.write(centroids_df)
+
+#-----------------------------
+    import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+
+# Function to load data
+st.cache_data
+def load_data(url):
+    return pd.read_csv(url)
+
+# Load the product data
+products_file_path = "https://raw.githubusercontent.com/Maenzzz/Tugas_Besar_Sains_data/main/products_dataset.csv"
+products_data = load_data(products_file_path)
+
+# Select relevant features for clustering
+features = products_data[['product_name_lenght', 'product_description_lenght', 'product_photos_qty', 
+                          'product_weight_g', 'product_length_cm', 'product_height_cm', 'product_width_cm']]
+
+# Impute missing values with the mean of each feature
+imputer = SimpleImputer(strategy='mean')
+features_imputed = imputer.fit_transform(features)
+
+# Data Preprocessing: Standardize the features
+scaler = StandardScaler()
+features_scaled = scaler.fit_transform(features_imputed)
+
+# Perform KMeans clustering
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(features_scaled)
+
+# Add cluster labels to the original data
+products_data['Cluster'] = kmeans.labels_
+
+# Display the clustered products
+st.subheader('Clustered Products:')
+st.write(products_data[['product_id', 'product_category_name', 'Cluster']].head(50  ))
