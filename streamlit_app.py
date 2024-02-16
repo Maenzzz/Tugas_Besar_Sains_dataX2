@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+
+import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.cluster import KMeans
@@ -19,8 +22,9 @@ st.title('E-Commerce Data Analysis')
 # Sidebar menu for selecting analysis
 analysis_choice = st.sidebar.selectbox(
     "Select Analysis",
-    ["Payment Analysis", "Order Delivery Analysis", "Product Analysis"]
+    ["Payment Analysis", "Order Delivery Analysis", "Product Analysis","anggota kelompok plotyly"]
 )
+
 
 # Function for payment analysis
 def payment_analysis(order_payments_data):
@@ -197,7 +201,27 @@ kmeans.fit(features_scaled)
 
 # Add cluster labels to the original data
 products_data['Cluster'] = kmeans.labels_
+st.title('anggota kelompok plotyly')
+# Data
+datax = {
+    "Nama Topik": ["Payment Analysis", "Payment Analysis", "Payment Analysis", 
+                   "Order Delivery Analysis", "Order Delivery Analysis", "Product Analysis"
+                  ],
+    "Nama Bagian": ["Payment Type Distribution", "Payment Installments Distribution", "Payment Value Distribution",
+                    "Order Purchase Timestamps Distribution", "Delivery Time Intervals Distribution", "Clustered Products"
+                    ],
+    "Nama Orang": ["Frederick Cornelius Nathaniel", "Nuri Hanang Prasetyo", "Alfin Achmad Zaidan",
+                   "Zharfan Asshaukanie Santoso", "Fayadh Muhammad", "Yusuf Simangunsong",
+                    ],
+    "NIM": ["10122084", "10122091", "10122100", "10122086", "10122090", "10122082",
+            ]
+}
 
+# Create DataFrame
+df = pd.DataFrame(datax)
+
+# Display table
+st.write(df)
 # Display the clustered products
 st.subheader('Clustered Products:')
 st.write(products_data[['product_id', 'product_category_name', 'Cluster']].head(50  ))
@@ -206,3 +230,4 @@ st.write("2. Select Relevant Features: Memilih fitur-fitur yang relevan untuk di
 st.write("3. Data Preprocessing: Fitur-fitur yang telah dipilih kemudian diimputasi dengan mengisi nilai-nilai yang hilang menggunakan mean dari masing-masing fitur. Setelah itu, fitur-fitur tersebut diskalakan menggunakan StandardScaler dari sklearn.preprocessing.")
 st.write("4. KMeans Clustering: Menerapkan algoritma KMeans untuk melakukan clustering pada data yang telah dipreprocessing, dengan menggunakan jumlah cluster sebanyak 3 dan random_state=42 untuk hasil yang konsisten.")
 st.write("5. Menambahkan Label Cluster ke Data Asli: Hasil clustering (label cluster) kemudian ditambahkan ke data produk asli.")
+
