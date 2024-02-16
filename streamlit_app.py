@@ -173,9 +173,7 @@ def product_analysis(products_data):
    
 
 # Function to load data
-st.cache_resource
-def load_data(url):
-    return pd.read_csv(url)
+
 
 # Load the product data
 products_file_path = "https://raw.githubusercontent.com/Maenzzz/Tugas_Besar_Sains_data/main/products_dataset.csv"
