@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
 
 # Function to load data from URL
 def load_data(url):
@@ -138,8 +140,7 @@ elif analysis_choice == "Product Analysis":
         product_analysis(products_data)
 
 
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
+
 
 def product_analysis(products_data):
     st.header('Product Analysis')
@@ -169,15 +170,10 @@ def product_analysis(products_data):
     st.write(centroids_df)
 
 #-----------------------------
-    import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-from sklearn.impute import SimpleImputer
+   
 
 # Function to load data
-st.cache_data
+@st.cache
 def load_data(url):
     return pd.read_csv(url)
 
