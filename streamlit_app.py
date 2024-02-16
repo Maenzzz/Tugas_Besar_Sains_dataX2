@@ -173,7 +173,7 @@ def product_analysis(products_data):
    
 
 # Function to load data
-@st.cache
+st.cache_resource
 def load_data(url):
     return pd.read_csv(url)
 
