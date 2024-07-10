@@ -30,7 +30,7 @@ Proyek ini mensimulasikan data curah hujan menggunakan data historis dan metode 
    - Gunakan elemen interaktif untuk menjelajahi skenario dan prediksi yang berbeda.
    - Tinjau grafik dan tabel untuk mendapatkan wawasan tentang data curah hujan.
 
-## Penulis
+## Akun
 
 - [Reyn12](https://github.com/Reyn12)
 
