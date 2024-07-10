@@ -1,8 +1,14 @@
 # Tugas_Besar_Sains_data
 kelompok plotly link dashboard:https://tugasbesarsainsdatax2.streamlit.app/
 
-dataset yang di gunakan:https://github.com/Maenzzz/Tugas_Besar_Sains_data
-Here's a README for the [Simulasi Curah Hujan Kelompok 7](https://reyn12.github.io/simulasi-curah-hujan-kel7/) website:
+
+
+
+# Simulasi Curah Hujan Kelompok
+
+
+
+website:(https://reyn12.github.io/simulasi-curah-hujan-kel7/) 
 
 ---
 
