@@ -4,42 +4,35 @@ kelompok plotly link dashboard:https://tugasbesarsainsdatax2.streamlit.app/
 
 
 
-# Simulasi Curah Hujan Kelompok
-
-
-
-website:(https://reyn12.github.io/simulasi-curah-hujan-kel7/) 
-
 ---
 
 # Simulasi Curah Hujan Kelompok 7
 
-This project simulates rainfall data using historical data and Monte Carlo methods.
+Proyek ini mensimulasikan data curah hujan menggunakan data historis dan metode Monte Carlo.
 
-## Getting Started
+## Memulai
 
-### Prerequisites
+### Prasyarat
 
-- Web browser (e.g., Chrome, Firefox)
+- Browser web (misalnya, Chrome, Firefox)
 
-### Using the Website
+### Menggunakan Website
 
-1. **Visit the Website:**
-   Navigate to [Simulasi Curah Hujan Kelompok 7](https://reyn12.github.io/simulasi-curah-hujan-kel7/).
+1. **Kunjungi Website:**
+   Buka [Simulasi Curah Hujan Kelompok 7](https://reyn12.github.io/simulasi-curah-hujan-kel7/).
 
-2. **Explore the Simulation:**
-   - View the introduction and objectives of the simulation.
-   - Follow the steps outlined to understand the methodology.
-   - Analyze the simulation results provided.
+2. **Jelajahi Simulasi:**
+   - Lihat pengantar dan tujuan simulasi.
+   - Ikuti langkah-langkah yang dijelaskan untuk memahami metodologi.
+   - Analisis hasil simulasi yang disediakan.
 
-3. **Interact with the Data:**
-   - Use the interactive elements to explore different scenarios and predictions.
-   - Review charts and tables to gain insights into the rainfall data.
+3. **Interaksi dengan Data:**
+   - Gunakan elemen interaktif untuk menjelajahi skenario dan prediksi yang berbeda.
+   - Tinjau grafik dan tabel untuk mendapatkan wawasan tentang data curah hujan.
 
-## Authors
+## Penulis
 
 - [Reyn12](https://github.com/Reyn12)
 
 ---
 
-Feel free to copy and use this README in your repository!
